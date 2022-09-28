@@ -8,4 +8,4 @@ const {
 
 router.route('/').get(getAll).post(post)
 
-module.exports = router
+module.exports = router 
