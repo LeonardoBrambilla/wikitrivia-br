@@ -18,7 +18,7 @@ export default function Game() {
     const fetchGameData = async () => {
       console.log("billy")
       const res = await axios.get<string>(
-        "http://localhost:5000/"
+        "https://wikitrivia-br-data.tomjwatson.com/items.json"
         // "https://wikitrivia-data.tomjwatson.com/items.json"
         );
         
