@@ -10,7 +10,7 @@ app.use('/',require("./routes/router"))
 
 const port = process.env.PORT || 5000
 
-const start = async()=>{
+const start = async()=>{ 
   try{
     await connectDB(process.env.MONGO_URL)
     app.listen(port,()=>
