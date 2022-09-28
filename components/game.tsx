@@ -17,15 +17,13 @@ export default function Game() {
   React.useEffect(() => {
     const fetchGameData = async () => {
       console.log("billy")
-      const res = await axios.get<string>(
+      const res = await axios.get(
         "https://wikitrivia-br-server.vercel.app"
         // "https://wikitrivia-data.tomjwatson.com/items.json"
         );
         
-        console.log(res.data)
-      const items: Item[] = res.data
+      const items = res.data
         
-      console.log(items)
       setItems(items)
     };
 
