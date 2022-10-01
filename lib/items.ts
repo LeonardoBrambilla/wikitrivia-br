@@ -25,18 +25,12 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
     return true;
   });
 
-  // if (candidates.length > 0) {
-  //   return candidates[Math.floor(Math.random() * candidates.length)];
-
-  // }
-  // addEventListener('keypress', (event) => {});
   const newitem = deck[Math.floor(Math.random() * deck.length)]
   deck.map(e=>{
     if(newitem == e) {
       const newitem = deck[Math.floor(Math.random() * deck.length)]
     }}
     )
-    // console.log(newitem)
     return newitem
 
 }
@@ -53,7 +47,7 @@ export function checkCorrect(
   played: PlayedItem[],
   item: Item,
   index: number,
-  newNextButOne:PlayedItem[]
+  newNextButOne:any
 ): { correct: boolean; delta: number } {
   const sorted = [...played, item].sort((a, b) => a.year - b.year);
   const array = [...played]
