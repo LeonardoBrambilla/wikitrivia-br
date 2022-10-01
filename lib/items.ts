@@ -3,7 +3,7 @@ import { createWikimediaImage } from "./image";
 
 export function getRandomItem(deck: Item[], played: Item[]): Item {
   // console.log(deck)
-  console.log(played)
+  // console.log(played)
   const periods: [number, number][] = [
     [-100000, 1000],
     [1000, 1800],
@@ -36,7 +36,7 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
       const newitem = deck[Math.floor(Math.random() * deck.length)]
     }}
     )
-    console.log(newitem)
+    // console.log(newitem)
     return newitem
 
 }
@@ -52,15 +52,26 @@ function tooClose(item: Item, played: Item[]) {
 export function checkCorrect(
   played: PlayedItem[],
   item: Item,
-  index: number
+  index: number,
+  newNextButOne:PlayedItem[]
 ): { correct: boolean; delta: number } {
   const sorted = [...played, item].sort((a, b) => a.year - b.year);
+  const array = [...played]
+  array.push(newNextButOne)  
+  const t = array.find((i) => i.year == item.year)
+  if(t){
+    return { correct: true, delta: 0 };
+  }  
+
   const correctIndex = sorted.findIndex((i) => {
     return i.id === item.id;
   });
 
   if (index !== correctIndex) {
     return { correct: false, delta: correctIndex - index };
+  }
+  if (index == correctIndex) {
+    return { correct: true, delta: 0 };
   }
 
   return { correct: true, delta: 0 };
