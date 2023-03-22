@@ -2,8 +2,6 @@ import { Item, PlayedItem } from "../types/item";
 import { createWikimediaImage } from "./image";
 
 export function getRandomItem(deck: Item[], played: Item[]): Item {
-  // console.log(deck)
-  // console.log(played)
   const periods: [number, number][] = [
     [-100000, 1000],
     [1000, 1800],
@@ -32,7 +30,6 @@ export function getRandomItem(deck: Item[], played: Item[]): Item {
     }}
     )
     return newitem
-
 }
 
 function tooClose(item: Item, played: Item[]) {

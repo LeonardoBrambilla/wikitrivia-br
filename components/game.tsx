@@ -16,9 +16,8 @@ export default function Game() {
  
   React.useEffect(() => {
     const fetchGameData = async () => {
-      console.log("billy")
       const res = await axios.get(
-        "https://wikitrivia-br-server.vercel.app"
+        "https://wikitrivia-br-server.vercel.app" // this the other server
         // "https://wikitrivia-data.tomjwatson.com/items.json"
         );
         
